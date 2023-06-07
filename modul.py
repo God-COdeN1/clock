@@ -59,26 +59,12 @@ def stopwatch():
         if len(str(hours)) >= 24:
             return print("24 hours")
 
+def read():
+    with open('cs/s.csv', 'r') as file:
+        reader = csv.reader(file)
+        first_row = next(reader)
+        return first_row
+
+
 stopwatch()
-
-
-with open('cs/s.csv', 'r') as file:
-    reader = csv.DictReader(file)
-    for row in reader:
-        if 'a' in row:
-            data = row['a']
-            break
-
-with open('file.csv', 'r') as file:
-    reader = csv.DictReader(file)
-    for row in reader:
-        if row['A'] == '1':
-            hours = int(row['B'])
-            minutes = int(row['C'])
-            seconds = 0
-            break
-
-if 'hours' in locals():
-    print("Hour:", hours)
-    print("Minutes:", minutes)
-    print("Seconds:", seconds)
+read()
