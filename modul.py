@@ -66,8 +66,8 @@ with open('cs/s.csv', 'r') as file:
     reader = csv.DictReader(file)
     for row in reader:
         if 'a' in row:
-            data = row['a']  # Отримуємо значення стовпця 'a'
-            break  # Зупиняємо цикл після першого рядка
+            data = row['a']
+            break
 
 with open('file.csv', 'r') as file:
     reader = csv.DictReader(file)
@@ -82,5 +82,3 @@ if 'hours' in locals():
     print("Hour:", hours)
     print("Minutes:", minutes)
     print("Seconds:", seconds)
-else:
-    print("Рядок не знайдено")
